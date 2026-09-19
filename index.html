@@ -1,322 +1,95 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abhay Sharma is a software developer building fast, practical systems, developer tools, and open-source projects.">
-  <meta name="theme-color" content="#f2f0e9">
-  <meta property="og:title" content="Abhay Sharma — Software Developer">
-  <meta property="og:description" content="Fast, practical software built to scale.">
-  <meta property="og:type" content="website">
-  <title>Abhay Sharma — Software Developer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Abhay Sharma — Software Development Engineer and Data Science student." />
+  <title>Abhay Sharma · Software Development Engineer</title>
   <style>
-    :root {
-      --paper: #f2f0e9;
-      --ink: #151613;
-      --muted: #62645d;
-      --line: #c9c7bd;
-      --acid: #d8ff3e;
-      --violet: #7a5cff;
-      --white: #fffef9;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
-    }
-    a { color: inherit; }
-    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid rgba(21, 22, 19, .16);
-      background: rgba(242, 240, 233, .88);
-      backdrop-filter: blur(14px);
-    }
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand { font-size: 1.05rem; font-weight: 850; text-decoration: none; letter-spacing: -.03em; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 700; text-decoration: none; }
-    .nav-links a:hover { color: var(--ink); }
-
-    .hero {
-      min-height: calc(100vh - 73px);
-      display: grid;
-      align-content: center;
-      padding: 88px 0;
-      overflow: hidden;
-    }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: .78rem;
-      font-weight: 850;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: #43a047; box-shadow: 0 0 0 4px rgba(67, 160, 71, .14); }
-    h1 {
-      max-width: 950px;
-      margin: 0;
-      font-size: clamp(3.4rem, 9vw, 7.8rem);
-      line-height: .91;
-      letter-spacing: -.075em;
-      font-weight: 900;
-    }
-    .highlight { position: relative; white-space: nowrap; }
-    .highlight::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: -.02em;
-      right: -.04em;
-      bottom: .06em;
-      height: .26em;
-      background: var(--acid);
-      transform: rotate(-1.5deg);
-    }
-    .hero-bottom {
-      display: grid;
-      grid-template-columns: 1fr minmax(280px, 440px);
-      gap: 48px;
-      align-items: end;
-      margin-top: 54px;
-    }
-    .hero-copy { margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 48px;
-      padding: 0 20px;
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-      font-size: .9rem;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .button:hover { transform: translateY(-2px); box-shadow: 3px 3px 0 var(--ink); }
-    .button.primary { background: var(--ink); color: var(--white); }
-
-    section { padding: 104px 0; border-top: 1px solid var(--line); }
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-      margin-bottom: 52px;
-    }
-    .kicker { margin: 6px 0 0; color: var(--muted); font-size: .78rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
-    h2 { margin: 0; max-width: 800px; font-size: clamp(2.1rem, 5vw, 4rem); line-height: 1; letter-spacing: -.055em; }
-
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .project {
-      min-height: 300px;
-      display: flex;
-      flex-direction: column;
-      padding: 30px;
-      border: 1px solid var(--ink);
-      border-radius: 22px;
-      background: var(--white);
-      text-decoration: none;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .project:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--ink); }
-    .project.featured { grid-column: span 2; min-height: 360px; background: var(--acid); }
-    .project:nth-child(3) { background: #ded7ff; }
-    .project:nth-child(6) { background: #ffd8bd; }
-    .project-top { display: flex; justify-content: space-between; gap: 20px; }
-    .project-number { color: var(--muted); font: 700 .78rem ui-monospace, SFMono-Regular, Menlo, monospace; }
-    .arrow { font-size: 1.4rem; transition: transform .2s ease; }
-    .project:hover .arrow { transform: translate(4px, -4px); }
-    .project-body { margin-top: auto; }
-    .project h3 { margin: 0 0 12px; font-size: clamp(1.65rem, 4vw, 3rem); line-height: 1; letter-spacing: -.045em; }
-    .project p { max-width: 680px; margin: 0 0 22px; color: #4f514b; font-size: 1rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
-    .tag { padding: 6px 10px; border: 1px solid rgba(21,22,19,.38); border-radius: 999px; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
-
-    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 72px; }
-    .about-copy { margin: 0; font-size: clamp(1.55rem, 3vw, 2.5rem); line-height: 1.24; letter-spacing: -.035em; }
-    .facts { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-    .facts li { display: flex; justify-content: space-between; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
-    .facts span:first-child { color: var(--muted); }
-    .facts span:last-child { font-weight: 750; text-align: right; }
-
-    .contact { text-align: center; }
-    .contact h2 { max-width: 850px; margin-inline: auto; }
-    .contact p { max-width: 580px; margin: 24px auto 30px; color: var(--muted); font-size: 1.1rem; }
-    .socials { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
-    .footer-row { display: flex; justify-content: space-between; gap: 20px; }
-
-    @media (max-width: 760px) {
-      .wrap { width: min(calc(100% - 28px), var(--max)); }
-      .nav { min-height: 64px; }
-      .nav-links a:not(:last-child) { display: none; }
-      .hero { min-height: auto; padding: 88px 0 72px; }
-      .hero-bottom, .section-head, .about-grid { grid-template-columns: 1fr; gap: 26px; }
-      section { padding: 74px 0; }
-      .projects { grid-template-columns: 1fr; }
-      .project.featured { grid-column: auto; }
-      .project, .project.featured { min-height: 280px; padding: 24px; }
-      .footer-row { flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
-    }
+    :root { --bg:#0b0f14; --panel:#111821; --line:#263241; --text:#edf3f8; --muted:#96a6b5; --accent:#8ee3b1; --accent2:#83b8ff; --warm:#ffd58a; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 80% 0%,#152b34 0,transparent 32rem),var(--bg); font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    a:hover { color:var(--accent); }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:26px 0; border-bottom:1px solid rgba(255,255,255,.08); }
+    .brand { font-weight:800; letter-spacing:.03em; }
+    .brand span { color:var(--accent); }
+    .navlinks { display:flex; gap:24px; color:var(--muted); font-size:.9rem; }
+    .hero { min-height:690px; display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:70px; padding:80px 0 100px; }
+    .eyebrow { color:var(--accent); font:700 .78rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:18px 0 20px; font-size:clamp(3.3rem,8vw,6.7rem); line-height:.94; letter-spacing:-.08em; }
+    h1 em { color:var(--accent); font-style:normal; }
+    .lead { max-width:650px; color:#b9c5cf; font-size:1.14rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin:30px 0; }
+    .button { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-weight:700; transition:.2s ease; }
+    .button.primary { color:#09120d; background:var(--accent); border-color:var(--accent); }
+    .button:hover { transform:translateY(-2px); color:inherit; }
+    .button.primary:hover { color:#09120d; }
+    .links { display:flex; flex-wrap:wrap; gap:17px; color:var(--muted); font-size:.9rem; }
+    .links a { border-bottom:1px solid #435161; }
+    .signal { position:relative; min-height:390px; border:1px solid var(--line); border-radius:24px; padding:26px; overflow:hidden; background:linear-gradient(145deg,rgba(142,227,177,.09),rgba(131,184,255,.06)); }
+    .signal:before,.signal:after { content:""; position:absolute; border:1px solid rgba(142,227,177,.28); border-radius:50%; }
+    .signal:before { width:410px; height:410px; right:-180px; top:-100px; }
+    .signal:after { width:270px; height:270px; right:-110px; top:-30px; }
+    .signal-top { position:relative; z-index:1; display:flex; justify-content:space-between; color:var(--muted); font: .75rem ui-monospace,monospace; }
+    .signal h2 { position:relative; z-index:1; margin:80px 0 10px; max-width:260px; font-size:2.15rem; line-height:1.05; letter-spacing:-.05em; }
+    .signal p { position:relative; z-index:1; color:var(--muted); }
+    .metric { position:absolute; z-index:1; right:26px; bottom:26px; color:var(--accent); font:700 3.2rem/.9 ui-monospace,monospace; text-align:right; }
+    .metric small { display:block; color:var(--muted); font: .75rem ui-sans-serif,system-ui; margin-top:9px; }
+    section { padding:92px 0; border-top:1px solid rgba(255,255,255,.08); }
+    .section-head { display:flex; align-items:end; justify-content:space-between; margin-bottom:30px; gap:20px; }
+    h2 { margin:0; font-size:clamp(2rem,4vw,3.3rem); letter-spacing:-.06em; line-height:1; }
+    .section-head p { max-width:420px; margin:0; color:var(--muted); }
+    .role { display:grid; grid-template-columns:220px 1fr; gap:50px; padding:34px 0; }
+    .date { color:var(--accent); font:700 .78rem ui-monospace,monospace; text-transform:uppercase; letter-spacing:.05em; }
+    h3 { margin:0 0 7px; font-size:1.55rem; letter-spacing:-.03em; }
+    .company { color:var(--muted); }
+    ul { margin:20px 0 0; padding:0; list-style:none; }
+    li { position:relative; margin:13px 0; padding-left:22px; color:#c3ced6; }
+    li:before { content:"↳"; position:absolute; left:0; color:var(--accent); }
+    .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { min-height:390px; display:flex; flex-direction:column; border:1px solid var(--line); border-radius:18px; padding:24px; background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018)); transition:.2s ease; }
+    .card:hover { transform:translateY(-5px); border-color:#5a7186; }
+    .card-number { color:var(--accent2); font: .8rem ui-monospace,monospace; }
+    .card h3 { margin-top:28px; }
+    .stack { color:var(--warm); font-size:.83rem; }
+    .card p { color:var(--muted); }
+    .card a { margin-top:auto; color:var(--accent); font-weight:700; }
+    .skills { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .skill { padding:24px; background:var(--bg); }
+    .skill strong { display:block; margin-bottom:8px; color:var(--accent); }
+    .skill span { color:#bac7d0; }
+    .education { display:flex; justify-content:space-between; gap:30px; border:1px solid var(--line); border-radius:18px; padding:30px; }
+    .education .year { color:var(--accent); font:700 .85rem ui-monospace,monospace; white-space:nowrap; }
+    footer { padding:44px 0 60px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.9rem; }
+    @media (max-width:800px) { .navlinks { display:none; } .hero { grid-template-columns:1fr; gap:30px; padding-top:70px; } .signal { min-height:300px; } .projects { grid-template-columns:1fr; } .role { grid-template-columns:1fr; gap:12px; } .skills { grid-template-columns:1fr; } footer { display:block; } footer p:last-child { margin-top:10px; } }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#top">AS<span style="color:var(--violet)">.</span></a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://github.com/Git-of-abhay" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </div>
-    </nav>
-  </header>
+  <div class="wrap">
+    <nav><a class="brand" href="#top">A<span>.</span>SHARMA</a><div class="navlinks"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
-  <main id="top">
-    <div class="hero wrap">
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Open to building useful things</p>
-      <h1>Fast software.<br>Clear thinking.<br><span class="highlight">Real impact.</span></h1>
-      <div class="hero-bottom">
-        <div class="hero-actions">
-          <a class="button primary" href="#work">Explore my work ↓</a>
-          <a class="button" href="https://linkedin.com/in/abhaysharma12" target="_blank" rel="noreferrer">Let’s connect ↗</a>
-        </div>
-        <p class="hero-copy">I’m Abhay Sharma, a software developer focused on systems, developer tools, and practical products that can scale.</p>
-      </div>
-    </div>
+    <main id="top">
+      <section class="hero" style="border-top:0">
+        <div><div class="eyebrow">Software Development Engineer · Chennai, India</div><h1>Building useful things for <em>real people.</em></h1><p class="lead">I’m Abhay Sharma, an SDE intern and Data Science student who builds full-stack products, developer tools, and resilient systems from idea to deployment.</p><div class="actions"><a class="button primary" href="#projects">See my work ↓</a><a class="button" href="mailto:24f1001915@ds.study.iitm.ac.in">Let’s connect</a></div><div class="links"><a href="https://github.com/git-of-abhay" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/abhaysharma12" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://x.com/letmecodeee" target="_blank" rel="noreferrer">X / Twitter</a><a href="https://abhaysharma.dev" target="_blank" rel="noreferrer">abhaysharma.dev</a></div></div>
+        <div class="signal"><div class="signal-top"><span>BUILD_LOG / 2026</span><span>01—04</span></div><h2>Code with scale, care, and curiosity.</h2><p>Full-stack engineering · data-informed products · offline-first systems</p><div class="metric">10K+<small>customers supported</small></div></div>
+      </section>
 
-    <section id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">01 / Selected work</p>
-          <h2>Things I’ve designed, built, and shipped.</h2>
-        </div>
+      <section id="work"><div class="section-head"><h2>Experience</h2><p>Shipping operational software across teams, locations, and platforms.</p></div><div class="role"><div><div class="date">Apr 2026 — Sep 2026</div><div class="company">Remote</div></div><div><h3>Software Development Engineer Intern</h3><div class="company">Ecowell India</div><ul><li>Built and launched a customized CRM supporting 10,000+ customers across 8 locations, coordinating workflows across 18 teams and 8 role-based access levels.</li><li>Developed cross-platform web and mobile applications with JavaScript, TypeScript, React, React Native, Node.js, Express.js, PostgreSQL, and SQL.</li><li>Integrated 48 API endpoints supporting 1,000+ daily tickets and 10,000+ transactions across sales, service, attendance, payment, and logistics operations.</li><li>Designed GPS-based attendance and real-time workforce tracking for 1,000+ employees using mapping APIs and location-driven business rules.</li><li>Automated 70+ multi-stage workflows while managing frontend, backend, database, and cross-platform dependencies within a three-person engineering team.</li></ul></div></div></section>
 
-        <div class="projects">
-          <a class="project featured" href="https://git-of-abhay.github.io/cfinsights/" target="_blank" rel="noreferrer">
-            <div class="project-top"><span class="project-number">01 — LIVE PROJECT</span><span class="arrow">↗</span></div>
-            <div class="project-body">
-              <h3>CFInsights</h3>
-              <p>A polished Codeforces analytics dashboard for exploring profiles, contest performance, ratings, and problem-solving patterns.</p>
-              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Public API</span><span class="tag">Data visualization</span></div>
-            </div>
-          </a>
+      <section id="projects"><div class="section-head"><h2>Selected projects</h2><p>Independent work that blends thoughtful interfaces with dependable engineering.</p></div><div class="projects">
+        <article class="card"><div class="card-number">01 / ANALYTICS</div><h3>CF Insights</h3><div class="stack">React · TypeScript · JavaScript · Codeforces API</div><p>A Codeforces analytics platform used by 20,000+ users, with approximately 200 daily active users. It turns ratings, contests, submissions, and problem-solving patterns into personalized insights and improvement plans, while handling peak traffic above 100 requests per second.</p><a href="https://github.com/git-of-abhay/cfinsights" target="_blank" rel="noreferrer">View on GitHub ↗</a></article>
+        <article class="card"><div class="card-number">02 / RESILIENCE</div><h3>Relief Net</h3><div class="stack">Python · FastAPI · WebSockets · SQLite · PWA</div><p>An offline-first progressive web app for real-time local-network communication without internet or cloud infrastructure. Includes 7 REST endpoints, a WebSocket route, offline queues, service-worker caching, moderation, audit logging, and 8 passing automated tests.</p><a href="https://github.com/Git-of-abhay/relief-net" target="_blank" rel="noreferrer">View on GitHub ↗</a></article>
+        <article class="card"><div class="card-number">03 / SYSTEMS</div><h3>LRU Cache — C++20</h3><div class="stack">C++20 · STL · Templates · CMake · GitHub Actions</div><p>A reusable average O(1) LRU cache with an interactive CLI and thread-safe wrapper. Correctness was validated through 100,000 randomized operations and an 8-thread stress test; benchmarks reached up to 57.6× faster processing than a linear vector baseline.</p><a href="https://github.com/Git-of-abhay/lru-cache-cpp" target="_blank" rel="noreferrer">View on GitHub ↗</a></article>
+      </div></section>
 
-          <a class="project" href="https://github.com/Git-of-abhay/lru-cache-cpp" target="_blank" rel="noreferrer">
-            <div class="project-top"><span class="project-number">02 — OPEN SOURCE</span><span class="arrow">↗</span></div>
-            <div class="project-body">
-              <h3>LRU Cache</h3>
-              <p>A dependency-free C++20 cache with average O(1) operations, concurrency support, randomized tests, benchmarks, and sanitizer CI.</p>
-              <div class="tags"><span class="tag">C++20</span><span class="tag">Algorithms</span><span class="tag">Concurrency</span></div>
-            </div>
-          </a>
+      <section id="skills"><div class="section-head"><h2>Toolkit</h2><p>The tools I reach for to turn an idea into a reliable product.</p></div><div class="skills"><div class="skill"><strong>Languages</strong><span>C++ · Python · JavaScript · TypeScript · SQL</span></div><div class="skill"><strong>Frameworks</strong><span>React · React Native · Node.js · Express.js · Django · Flask · FastAPI</span></div><div class="skill"><strong>Data & databases</strong><span>PostgreSQL · MySQL · SQLite · NumPy · pandas · scikit-learn · Matplotlib · Seaborn</span></div><div class="skill"><strong>Tools & systems</strong><span>Git · GitHub · Linux · CMake · GitHub Actions · REST APIs · WebSockets · pytest · Ruff · PWA</span></div></div></section>
 
-          <a class="project" href="https://alphacompilerabhay.onrender.com/" target="_blank" rel="noreferrer">
-            <div class="project-top"><span class="project-number">03 — LIVE PROJECT</span><span class="arrow">↗</span></div>
-            <div class="project-body">
-              <h3>Alpha Compiler</h3>
-              <p>A programming language and compiler built from scratch to explore parsing, language design, and execution.</p>
-              <div class="tags"><span class="tag">Python</span><span class="tag">Compilers</span><span class="tag">Language design</span></div>
-            </div>
-          </a>
-
-          <a class="project" href="https://github.com/Git-of-abhay/repo-pilot" target="_blank" rel="noreferrer">
-            <div class="project-top"><span class="project-number">04 — OPEN SOURCE</span><span class="arrow">↗</span></div>
-            <div class="project-body">
-              <h3>Repo Pilot</h3>
-              <p>Approval-gated local software orchestration that turns ideas into controlled, reviewable engineering work.</p>
-              <div class="tags"><span class="tag">Python</span><span class="tag">Developer tools</span><span class="tag">Automation</span></div>
-            </div>
-          </a>
-
-          <a class="project" href="https://github.com/Git-of-abhay/relief-net" target="_blank" rel="noreferrer">
-            <div class="project-top"><span class="project-number">05 — OPEN SOURCE</span><span class="arrow">↗</span></div>
-            <div class="project-body">
-              <h3>Relief Net</h3>
-              <p>Offline-first local-network communication for communities and field teams when normal connectivity is unreliable.</p>
-              <div class="tags"><span class="tag">FastAPI</span><span class="tag">PWA</span><span class="tag">WebSocket</span></div>
-            </div>
-          </a>
-
-          <a class="project" href="https://github.com/Git-of-abhay/Numpy-In-CPP" target="_blank" rel="noreferrer">
-            <div class="project-top"><span class="project-number">06 — OPEN SOURCE</span><span class="arrow">↗</span></div>
-            <div class="project-body">
-              <h3>NumC++</h3>
-              <p>A C++ numerical-computing library bringing a broad collection of NumPy-style operations to native code.</p>
-              <div class="tags"><span class="tag">C++</span><span class="tag">Numerical computing</span><span class="tag">Library</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">02 / About</p>
-          <h2>Curious about how good software works underneath.</h2>
-        </div>
-        <div class="about-grid">
-          <p class="about-copy">I enjoy moving between low-level systems and useful web products—learning the fundamentals, keeping interfaces simple, and shipping work people can actually use.</p>
-          <ul class="facts">
-            <li><span>Based in</span><span>Bengaluru, India</span></li>
-            <li><span>Studying at</span><span>IIT Madras</span></li>
-            <li><span>Currently</span><span>SDE Intern, Ecowell India</span></li>
-            <li><span>Interested in</span><span>Systems · Scale · Dev tools</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <p class="kicker">03 / Contact</p>
-        <h2>Have an interesting problem? Let’s build something useful.</h2>
-        <p>The best way to reach me is through LinkedIn or GitHub.</p>
-        <div class="socials">
-          <a class="button primary" href="https://linkedin.com/in/abhaysharma12" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a class="button" href="https://github.com/Git-of-abhay" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a class="button" href="https://x.com/letmecodeee" target="_blank" rel="noreferrer">X / Twitter ↗</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© <span id="year">2026</span> Abhay Sharma</span>
-      <span>Designed and built with care.</span>
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+      <section><div class="section-head"><h2>Education</h2><p>Learning deeply, building constantly.</p></div><div class="education"><div><h3>Indian Institute of Technology Madras</h3><div class="company">Bachelor of Science in Data Science and Applications</div></div><div class="year">2024 — 2028</div></div></section>
+    </main>
+    <footer id="contact"><p>© 2026 Abhay Sharma</p><p><a href="tel:+918319881793">+91 83198 81793</a> · <a href="mailto:24f1001915@ds.study.iitm.ac.in">24f1001915@ds.study.iitm.ac.in</a></p></footer>
+  </div>
 </body>
 </html>
