@@ -11,7 +11,7 @@ The homepage is a single HTML file. GitHub Pages builds the blog with Jekyll fro
 3. Optionally add a WebP/JPG/PNG image to `assets/blog/`, then add `image: /assets/blog/filename.webp` and descriptive `image_alt:` text to the post's front matter. Images inside the article can use Markdown, for example `![Diagram description]({{ '/assets/blog/filename.webp' | relative_url }})`.
 4. Commit and push to `main`. GitHub Pages rebuilds the article, the blog archive, the homepage article cards, the article count, and reading time automatically.
 
-The starter article is `_posts/2026-09-23-building-software-for-real-operations.md`. Its content is based on the published résumé. Keep `_drafts/post-template.md` as a template; it is not published.
+The first articles cover Payrail and my workflow with AI agents. Keep `_drafts/post-template.md` as a template; it is not published.
 
 ## Project previews
 
