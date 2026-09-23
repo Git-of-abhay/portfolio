@@ -2,7 +2,7 @@
 
 Live site: https://git-of-abhay.github.io/portfolio/
 
-The homepage is a single HTML file. GitHub Pages builds the blog with Jekyll from Markdown posts in `_posts/`. No application server or account is needed to publish an article.
+The homepage is a single HTML file. GitHub Pages builds the blog with Jekyll from Markdown posts in `_posts/`. Publishing needs no application server or separate CMS account.
 
 ## Publish a blog post
 
