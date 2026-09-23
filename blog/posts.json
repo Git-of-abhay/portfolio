@@ -1,0 +1,19 @@
+---
+layout: null
+---
+[
+{% for post in site.posts %}
+  {% assign words = post.content | strip_html | split: ' ' | size %}
+  {% assign minutes = words | plus: 199 | divided_by: 200 %}
+  {
+    "title": {{ post.title | jsonify }},
+    "description": {{ post.description | default: post.excerpt | strip_html | normalize_whitespace | jsonify }},
+    "date": {{ post.date | date: '%d %b %Y' | jsonify }},
+    "date_iso": {{ post.date | date: '%Y-%m-%d' | jsonify }},
+    "reading_minutes": {{ minutes }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "image": {% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %},
+    "image_alt": {{ post.image_alt | default: '' | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

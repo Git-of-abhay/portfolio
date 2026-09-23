@@ -1,0 +1,9 @@
+title: Abhay Sharma
+description: Software Development Engineer, building useful products and resilient systems.
+url: https://git-of-abhay.github.io
+baseurl: /portfolio
+permalink: /blog/:title/
+markdown: kramdown
+exclude:
+  - README.md
+  - _drafts

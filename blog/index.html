@@ -1,0 +1,15 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f7f5"><meta name="description" content="Notes on building products and systems by Abhay Sharma."><title>Blog — Abhay Sharma</title><link rel="stylesheet" href="{{ '/blog/blog.css' | relative_url }}"><link rel="stylesheet" href="{{ '/blog/enhancements.css' | relative_url }}"></head><body>
+<a class="skip" href="#content">Skip to content</a><header class="header"><nav class="header-inner wrap" aria-label="Main navigation"><a class="brand" href="{{ '/' | relative_url }}">A. SHARMA</a><div class="header-links"><a href="{{ '/' | relative_url }}#projects">Projects</a><a href="{{ '/' | relative_url }}#experience">Experience</a><a href="{{ '/assets/AbhaySharma-SDE.pdf' | relative_url }}" download>Résumé ↓</a><a href="{{ '/' | relative_url }}#contact">Contact</a></div></nav></header>
+{% assign total_words = 0 %}{% for post in site.posts %}{% assign post_words = post.content | strip_html | split: ' ' | size %}{% assign total_words = total_words | plus: post_words %}{% endfor %}{% assign total_minutes = total_words | plus: 199 | divided_by: 200 %}
+<main id="content"><div class="archive-hero"><div class="wrap"><span class="kicker">Abhay Sharma / Journal</span><h1>Notes from the build.</h1><p class="muted">Products, engineering decisions, systems, and what I learn along the way.</p><p class="archive-stats"><strong>{{ site.posts.size }}</strong> {% if site.posts.size == 1 %}article{% else %}articles{% endif %} <span aria-hidden="true">·</span> <strong>{{ total_minutes }}</strong> minutes of reading</p></div></div><div class="posts wrap">
+{% for post in site.posts %}
+{% assign words = post.content | strip_html | split: ' ' | size %}{% assign minutes = words | plus: 199 | divided_by: 200 %}
+<article class="post-card"><div class="post-image">{% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: '' | escape }}" loading="lazy">{% else %}<span aria-hidden="true">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>{% endif %}</div><div class="post-card-content"><time class="kicker" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b %Y' }}</time><span class="read-meta">{{ minutes }} min read</span><h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2><p>{{ post.description | default: post.excerpt | strip_html | truncate: 180 }}</p><a class="read" href="{{ post.url | relative_url }}">Read article ↗</a></div></article>
+{% else %}
+<p>First article coming soon.</p>
+{% endfor %}
+</div></main><footer class="footer"><div class="footer-inner wrap"><span>© 2026 Abhay Sharma</span><a href="{{ '/' | relative_url }}">Back to portfolio ↗</a></div></footer></body></html>
