@@ -12,7 +12,7 @@
 <body>
   <div class="reading-track"><progress id="reading-progress" max="100" value="0" aria-label="Article reading progress"></progress></div>
   <a class="skip" href="#content">Skip to content</a>
-  <header class="header"><nav class="header-inner wrap" aria-label="Main navigation"><a class="brand" href="{{ '/' | relative_url }}">A. SHARMA</a><div class="header-links"><a href="{{ '/' | relative_url }}">Portfolio</a><a href="{{ '/blog/' | relative_url }}">All posts</a><a href="{{ '/assets/abhaySharma-sde.pdf' | relative_url }}" download>Résumé ↓</a><a href="{{ '/' | relative_url }}#contact">Contact</a></div></nav></header>
+  <header class="header"><nav class="header-inner wrap" aria-label="Main navigation"><a class="brand" href="{{ '/' | relative_url }}">A. SHARMA</a><div class="header-links"><a href="{{ '/' | relative_url }}">Portfolio</a><a href="{{ '/blog/' | relative_url }}">All posts</a><a href="{{ '/assets/abhaySharma-sde.pdf' | relative_url }}" download="Abhay-Sharma-Resume.pdf" type="application/pdf">Résumé ↓</a><a href="{{ '/' | relative_url }}#contact">Contact</a></div></nav></header>
   <main id="content">
     <header class="article-header wrap"><span class="kicker">Journal / <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d %b %Y' }}</time></span><h1>{{ page.title | escape }}</h1><p class="lede muted">{{ page.description | escape }}</p><div class="article-meta"><span>{{ minutes }} min read</span><span id="article-views">Views start at 100</span></div></header>
     {% if page.image %}<div class="wrap"><img class="hero-image" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' | escape }}"></div>{% endif %}

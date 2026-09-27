@@ -4,6 +4,8 @@ url: https://git-of-abhay.github.io
 baseurl: /portfolio
 permalink: /blog/:title/
 markdown: kramdown
+include:
+  - _headers
 exclude:
   - README.md
   - _drafts

@@ -24,3 +24,7 @@ Public repository and star counts come from GitHub's public API. The homepage vi
 ## Preview locally
 
 For the homepage layout only, run `python3 -m http.server 4176` and open http://localhost:4176. To preview Jekyll posts and the archive before publishing, run `jekyll serve --baseurl /portfolio` in an environment with Jekyll installed. The actual build runs on GitHub Pages after a push.
+
+## Cloudflare Pages
+
+Connect this repository as a **Pages** project with production branch `main`. Set the build command to `bundle exec jekyll build --config _config.yml,_config.cloudflare.yml` and the output directory to `_site`. The Cloudflare config removes GitHub Pages' `/portfolio` path prefix, so blog and résumé links work at the Cloudflare domain root. The root `_headers` file gives the résumé a PDF content type and a stable download filename.
